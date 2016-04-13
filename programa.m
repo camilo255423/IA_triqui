@@ -9,9 +9,11 @@ while ~es_jugada_final(jugada)
     jugada.tablero(fila,columna)=-1;
     jugada.mostrar_tablero();
     
-    disp('Juega el computador, calculando...')
-    [jugada, puntaje]=determinar_mejor_jugada(jugada,1);
-    jugada.mostrar_tablero();
+    if ~es_jugada_final(jugada)
+        disp('Juega el computador, calculando...')
+        [jugada, puntaje]=determinar_mejor_jugada(jugada,1);
+        jugada.mostrar_tablero();
+    end
     
     
 end
